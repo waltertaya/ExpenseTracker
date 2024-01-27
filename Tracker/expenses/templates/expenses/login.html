@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumi Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Log in</h1>
+            <form action="{% url 'home' %}" method="POST">
+                {% csrf_token %}
+                <label for="username">Username
+                    <input type="text" name="username" id="username" placeholder="Enter your username">
+                </label>
+                <label for="email">Email
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                </label>
+                <label for="work_id">Work ID
+                    <input type="text" name="work_id" id="work_id" placeholder="Enter your work ID">
+                </label>
+                <label for="password">Password
+                    <input type="password" name="password" id="password" placeholder="Enter your password">
+                </label>
+                <input class="btn" type="submit" name="" value="Sign in">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

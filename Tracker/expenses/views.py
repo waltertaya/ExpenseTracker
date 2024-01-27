@@ -17,3 +17,7 @@ def dashboard(request):
 
 def expenses(request):
     return render(request, 'expenses/expenses.html')
+
+
+def login(request):
+    return render(request, 'expenses/login.html')
