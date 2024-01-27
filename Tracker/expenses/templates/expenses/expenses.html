@@ -1,0 +1,9 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+    {% for expense in expenses %}
+        <p> {{ expense.title }} </p>
+    {% endfor %}
+
+{% endblock %}

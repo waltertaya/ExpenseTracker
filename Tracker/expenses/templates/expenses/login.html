@@ -10,21 +10,22 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <h1>Log in</h1>
-            <form action="{% url 'home' %}" method="POST">
+            {% comment %}  {% endcomment %}
+            <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
+                <h1>Log in</h1>
                 <label for="username">Username
-                    <input type="text" name="username" id="username" placeholder="Enter your username">
-                </label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username" required>
+                </label><br>
                 <label for="email">Email
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
-                </label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                </label><br>
                 <label for="work_id">Work ID
-                    <input type="text" name="work_id" id="work_id" placeholder="Enter your work ID">
-                </label>
+                    <input type="text" name="work_id" id="work_id" placeholder="Enter your work ID" required>
+                </label><br>
                 <label for="password">Password
-                    <input type="password" name="password" id="password" placeholder="Enter your password">
-                </label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                </label><br>
                 <input class="btn" type="submit" name="" value="Sign in">
             </form>
         </div>

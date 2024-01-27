@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Rumi Press Distributing store</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
     <header>
-        <h1>Rumi Press Distributing store</h1>
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' name='waltermitty' %}">Home</a></li>
                 <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
                 <li><a href="{% url 'reports' %}">Reports</a></li>
                 <li><a href="{% url 'expenses' %}">Expenses</a></li>
@@ -18,6 +19,7 @@
     </header>
 
     <main>
+        <h1>Rumi Press Distributing store</h1>
         {% block content %}{% endblock %}
     </main>
 
