@@ -37,4 +37,5 @@ def dashboard(request):
 
 
 def expenses(request):
-    return render(request, 'expenses/expenses.html')
+    expenses = Expense.objects.all()
+    return render(request, 'expenses/expenses.html', {'expenses': expenses})

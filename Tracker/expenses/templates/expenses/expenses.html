@@ -1,9 +1,49 @@
 {% extends '../base.html' %}
 
 {% block content %}
-
-    {% for expense in expenses %}
-        <p> {{ expense.title }} </p>
-    {% endfor %}
-
+    <h1>Expenses</h1>
+    <div class="expense-table">
+        {% if expenses %}
+            <table>
+                <colgroup>
+                    <col style="width: 50px;"> 
+                    <col style="width: 150px;">
+                    <col style="width: 150px;">
+                    <col style="width: 100px;">
+                    <col style="width: 150px;">
+                    {% comment %} <col style="width: 120px;"> {% endcomment %}
+                    <col style="width: 120px;">
+                    <col style="width: 150px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Subtitle</th>
+                        <th>Authors</th>
+                        <th>Publisher</th>
+                        {% comment %} <th>Published Date</th> {% endcomment %}
+                        <th>Category</th>
+                        <th>Distribution Expense</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for expense in expenses %}
+                        <tr>
+                            <td>{{ expense.id }}</td>
+                            <td>{{ expense.title }}</td>
+                            <td>{{ expense.subtitle }}</td>
+                            <td>{{ expense.authors }}</td>
+                            <td>{{ expense.publisher }}</td>
+                            {% comment %} <td>{{ expense.published_date }}</td> {% endcomment %}
+                            <td>{{ expense.category }}</td>
+                            <td>{{ expense.distribution_expense }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No expenses</p>
+        {% endif %}
+    </div>
 {% endblock %}
