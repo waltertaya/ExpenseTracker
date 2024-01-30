@@ -33,9 +33,19 @@ def reports(request):
 
 
 def dashboard(request):
-    return render(request, 'expenses/dashboard.html')
+    expenses = Expense.objects.all()
+    total = 0
+    num = 0
+    for expense in expenses:
+        total += expense.distribution_expense
+        num += 1
+    avg = total / num
+    return render(request, 'expenses/dashboard.html',
+                  {'total': total, 'avg': avg})
 
 
 def expenses(request):
     expenses = Expense.objects.all()
-    return render(request, 'expenses/expenses.html', {'expenses': expenses})
+
+    return render(request, 'expenses/expenses.html',
+                  {'expenses': expenses})
