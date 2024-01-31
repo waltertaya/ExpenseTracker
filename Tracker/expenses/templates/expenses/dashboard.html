@@ -4,15 +4,27 @@
     <h1 class="head">DASHBOARD</h1>
     <div class="dashboard-container">
         <article>
-            <input type="button" value="Total Distribution Expenses" class="btn-total" onclick="TotalDistribution">
+            <input type="button" value="Total Distribution Expenses" class="btn-total" onclick="TotalDistribution()">
             <div class="total-expenses">
                 <p>Total Distribution Expenses: {{total}}</p>
             </div>
         </article>
         <article>
             <input type="button" value="Average Distribution Expenses" class="btn-avg" onclick="TotalDistribution">
-            <div class="total-expenses">
+            <div class="avg-expenses">
                 <p>Average Distribution Expenses: {{avg}}</p>
+            </div>
+        </article>
+        <article>
+            <input type="button" value="largest Distribution Expense" class="btn-large" onclick="TotalDistribution">
+            <div class="large-expense">
+                <p>Largest Distribution Expenses: {{largest}}</p>
+            </div>
+        </article>
+        <article>
+            <input type="button" value="Book Details with largest Expense" class="btn-detail" onclick="TotalDistribution">
+            <div class="detail-expense">
+                <p>Number of Books with {{largest}} Distribution Expense are :{{ count }}</p>
             </div>
         </article>
     </div>

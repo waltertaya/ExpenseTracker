@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/expenses.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="{% url 'home' name='waltermitty' %}">Home</a></li>
+                <li><a href="{% url 'expenses' %}">Expenses</a></li>
                 <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
                 <li><a href="{% url 'reports' %}">Reports</a></li>
-                <li><a href="{% url 'expenses' %}">Expenses</a></li>
             </ul>
         </nav>
     </header>

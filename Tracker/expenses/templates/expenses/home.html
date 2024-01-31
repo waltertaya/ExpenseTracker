@@ -3,5 +3,19 @@
 {% block content %}
 
 <h3>Welcome {{ username }} of email {{ email }}</h3>
+<div class="search">
+    <label for="records"><span>Search a record by: </span></label>
+    <select id="records" name="records">
+        <option name="id" value="id">Id</option>
+        <option name="title" value="title">Title</option>
+        <option name="subtitle" value="subtitle">Subtitle</option>
+        <option name="authors" value="authors">Authors</option>
+        <option name="publisher" value="publisher">Publisher</option>
+        <option name="category" value="category">Category</option>
+        <option name="distribution_expense" value="distribution_expense">Distribution Expense</option>
+    </select><br>
+    <input type="text" name="search-bar" class="search-bar" placeholder="Enter the value of the record to search..." autocomplete="off"><br>
+    <input class="btn" type="submit" name="" value="Search">
+</div>
 
 {% endblock %}

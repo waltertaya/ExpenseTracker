@@ -36,12 +36,24 @@ def dashboard(request):
     expenses = Expense.objects.all()
     total = 0
     num = 0
+    largest = 0
+    count = 0
+    details = []
     for expense in expenses:
         total += expense.distribution_expense
         num += 1
+        if expense.distribution_expense > largest:
+            largest = expense.distribution_expense
     avg = total / num
+    for expense in expenses:
+        count += 1
+        if largest == expense.distribution_expense:
+            item = [expense.id, expense.title, expense.subtitle,
+                           expense.authors, expense.publisher,
+                           expense.category, expense.distribution_expense]
+            details.append(item)
     return render(request, 'expenses/dashboard.html',
-                  {'total': total, 'avg': avg})
+                  {'total': total, 'avg': avg, 'largest': largest, 'details': details, 'count': count})
 
 
 def expenses(request):

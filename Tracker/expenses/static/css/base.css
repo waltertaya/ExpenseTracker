@@ -28,6 +28,10 @@ nav ul {
     align-items: center;
     gap: 2rem;
 }
+h1 {
+    text-align: center;
+    color: rgb(230, 97, 97);
+}
 footer {
     position: fixed;
     bottom: 0;
